@@ -13,6 +13,16 @@
   
     padding-top: 50px;
   }
+
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+/* 
+.clearfix {
+  overflow: auto;
+} */
   
   .container {
      margin-top: 100px;
@@ -97,6 +107,9 @@
     border-bottom-color: #777777;
     border-bottom-width: 1px;
     bottom: 0;
+    display: flex;
+    /* flex-direction: column; */
+    
   }
   
   .container {
@@ -156,7 +169,7 @@
     height: 100%;
     background-position: center;
     margin: 0;
-    position: relative;
+    /* position: relative; */
   }
   
   .footer {
@@ -176,11 +189,11 @@
   }
   .item {
     display: inline-block;
-    position: relative;
+    /* position: relative; */
   }
   .name {
-    position: relative;
-    top: -100px;
+    /* position: relative; */
+    /* top: -100px; */
     text-align: center;
     background-color: teal;
     color: white;
@@ -198,14 +211,25 @@
   }
 
   @media only screen and (max-width: 768px) {
-    #main-content, .wrapper, .page-links {
+    #main-content, .wrapper, .page-links, #contact-boxes, input, .header {
       width: 100%;
     }
   }
 
   @media only screen and (max-width: 640px) {
-    #main-content, .wrapper, .page-links, #contact-boxes {
+    #main-content, .wrapper, .page-links, #contact-boxes, .header {
       width: 100%;
+      
+    }
+    .full-name{
+      float: none;
+      width: 100%;
+      display: block;
+    }
+    .page-links {
+      float: none;
+      width: 100%;
+      display: block;
     }
     .wrapper {
       width: 100%;
@@ -216,13 +240,10 @@
     }
     #main-content {
       left: 10px;
+      width: 100%;
+      padding: 25px;
     }
     .container {
-      display: flex;
-      flex-direction: column;
-    }
-    .page-links, #about-link, #portfolio-link, #contact-link {
-      display: flex;
-      flex-direction: row;
+ 
     }
   }
